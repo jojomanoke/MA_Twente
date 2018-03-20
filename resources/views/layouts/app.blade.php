@@ -27,6 +27,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <!-- default user urls -->
+
+
+                        @if(Auth::user()->role->id == 2)
+                            <!-- admin urls -->
+                        @endif
 
                     </ul>
 

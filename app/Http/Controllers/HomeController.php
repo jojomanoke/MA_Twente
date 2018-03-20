@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\UserRole;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('home');
+        $roles = UserRole::get()->where('id', $user->id);
+        $role = $roles[0];
+        return view('home', ['user' => $user, 'role' => $role]);
     }
 }
