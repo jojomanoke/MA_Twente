@@ -22,6 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/overview', 'ErrorController@overview');
-Route::get('/create', 'ErrorController@create');
-Route::get('/edit', 'ErrorController@edit');
+Route::get('/overview', 'ErrorController@overview')->name('overview');
+Route::get('/create', 'ErrorController@create')->name('create');
+Route::get('/edit', 'ErrorController@edit')->name('edit');
