@@ -8,16 +8,16 @@ class ErrorController extends Controller
 {
     Public function overview(){
 
-    return view('overview');
+        return View('errorOverview');
     }
 
     public function create(){
 
-    return view('create');
+        return View('errorCreate');
     }
 
     public function edit(){
 
-    return view('edit');
+        return View('errorEdit');
     }
 }
