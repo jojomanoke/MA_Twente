@@ -45,8 +45,8 @@ class CreateWorkspaceTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('workspace');
         Schema::dropIfExists('computer_config');
         Schema::dropIfExists('software_config');
-        Schema::dropIfExists('workspace');
     }
 }

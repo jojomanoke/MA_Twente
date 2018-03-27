@@ -17,6 +17,7 @@ class CreateErrorTable extends Migration
         Schema::create('errors_priority', function(Blueprint $t){
             $t->increments('id');
             $t->string('name');
+            $t->string('code');
         });
 
         Schema::create('errors_status', function(Blueprint $t){
@@ -28,6 +29,7 @@ class CreateErrorTable extends Migration
             $t->increments('id');
             $t->string('solution');
             $t->string('type');
+            $t->longText('result');
             $t->integer('user_id')->unsigned();
             $t->foreign('user_id')->references('id')->on('users');
             $t->integer('priority_id')->unsigned();
@@ -45,6 +47,9 @@ class CreateErrorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('error');
+        Schema::dropIfExists('errors');
+        Schema::dropIfExists('errors_status');
+        Schema::dropIfExists('errors_priority');
+
     }
 }

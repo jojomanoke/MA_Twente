@@ -26,8 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $roles = UserRole::get()->where('id', $user->id);
-        $role = $roles[0];
+        $role = $user->role;
         return view('home', ['user' => $user, 'role' => $role]);
     }
 }

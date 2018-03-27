@@ -25,3 +25,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/overview', 'ErrorController@overview')->name('overview');
 Route::get('/create', 'ErrorController@create')->name('create');
 Route::get('/edit', 'ErrorController@edit')->name('edit');
+
+
+
+Route::prefix('/workspace')->group(function(){
+    Route::get('/', 'WorkspaceController@overview')->name('workspace');
+});
