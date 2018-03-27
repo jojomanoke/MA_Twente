@@ -4,12 +4,29 @@
 
 @section('content')
 
-    <div class="card">
+    <div class="mx-5 card">
         <h5 class="card-header">Overview of all errors</h5>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Prioriteit</th>
+                    <th scope="col">Naam</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{--@foreach()--}}
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                {{--@endforeach--}}
+                </tbody>
+            </table>
         </div>
     </div>
 

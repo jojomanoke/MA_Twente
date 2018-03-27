@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class ErrorController extends Controller
@@ -13,7 +13,9 @@ class ErrorController extends Controller
 
     public function create(){
 
-        return View('errorCreate');
+        $user = Auth::user();
+
+        return View('errorCreate' , [ 'user' => $user]);
     }
 
     public function edit(){
