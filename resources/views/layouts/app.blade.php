@@ -14,6 +14,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
+@php
+ $user = Auth::user();
+@endphp
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-primary">
             <div class="container">
@@ -29,11 +34,13 @@
                     <ul class="navbar-nav mr-auto">
                         <!-- default user urls -->
 
+
                         @if(Auth::user())
                             @if(Auth::user()->role->id == 2)
                             <!-- admin urls -->
                             @endif
                         @endif
+
 
                     </ul>
 
@@ -49,7 +56,12 @@
                                         Meld een error<span class="caret"></span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('overview') }}">Overview</a>
+                                        @if($user->role->name == 'default')
+                                        <a class="dropdown-item" href="{{ route('overview') }}">Gebruiker error overview</a>
+                                        @endif
+                                        @if($user->role->name == 'admin')
+                                        <a class="dropdown-item" href="{{ route('overview') }}">Admin error overview</a>
+                                        @endif
                                         <a class="dropdown-item" href="{{ route('create') }}">Create a error</a>
                                     </div>
                                 </li>
