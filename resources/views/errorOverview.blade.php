@@ -11,20 +11,20 @@
                 <thead>
                 <tr>
                     <th scope="col">Prioriteit</th>
-                    <th scope="col">Naam</th>
+                    <th scope="col">Type error</th>
                     <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Oplossing</th>
                 </tr>
                 </thead>
                 <tbody>
-                {{--@foreach()--}}
+                @foreach($errors as $error)
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row">{{$error->priority->name}}</th>
+                    <td>{{$error->type}}</td>
+                    <td>{{$error->type}}</td>
+                    <td>{{$error->solution}}</td>
                 </tr>
-                {{--@endforeach--}}
+                @endforeach
                 </tbody>
             </table>
         </div>
