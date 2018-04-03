@@ -30,11 +30,11 @@ class User extends Authenticatable
 
     public function role()
     {
-        return $this->belongsTo(UserRole::class);
+        return $this->hasOne(UserRole::class, 'id', 'role_id');
     }
 
     public function errors(){
-        return $this->hasMany(Error::class);
+        return $this->hasMany(Error::class, 'user_id', 'id');
     }
 
 }
