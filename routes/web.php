@@ -27,6 +27,8 @@ Route::get('/create', 'ErrorController@create')->name('create');
 Route::get('/saveError', 'ErrorController@saveError')->name('saveError');
 Route::get('/edit', 'ErrorController@edit')->name('edit');
 
-Route::get('workspace/overview', 'WorkspaceController@overview');
-Route::get('workspace/add', 'WorkspaceController@add');
-Route::post('workspace/save', 'WorkspaceController@save');
+
+
+Route::prefix('/workspace')->group(function(){
+    Route::get('/', 'WorkspaceController@overview')->name('workspace');
+});

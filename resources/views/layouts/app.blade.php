@@ -71,7 +71,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a href="{{url('workspace/overview')}}" class="dropdown-item">Workspace</a>
+                                    <a href="{{route('workspace')}}" class="dropdown-item">Workspace</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
