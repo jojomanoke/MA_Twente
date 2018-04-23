@@ -9,14 +9,14 @@ class Error extends Model
     protected $table = 'errors';
 
     public function priority(){
-        return $this->hasOne(ErrorPriority::class);
+        return $this->hasOne(ErrorPriority::class, 'id', 'priority_id');
     }
 
     public function status(){
-        return $this->hasOne(ErrorStatus::class);
+        return $this->hasOne(ErrorStatus::class , 'id', 'status_id');
     }
 
-    public function user_id(){
-        return $this->hasOne(User::class);
+    public function user(){
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }

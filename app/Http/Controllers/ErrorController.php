@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Error;
+use App\ErrorPriority;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -10,6 +11,7 @@ class ErrorController extends Controller
     Public function overview(){
 
         $errors = Error::all();
+
 
         return View('errorOverview', ['errors' => $errors]);
     }

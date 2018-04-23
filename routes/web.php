@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('/home');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -31,7 +31,4 @@ Route::get('/edit', 'ErrorController@edit')->name('edit');
 
 Route::prefix('/workspace')->group(function(){
     Route::get('/', 'WorkspaceController@overview')->name('workspace');
-    Route::get('/add', 'WorkspaceController@add');
-    Route::post('/save', 'WorkspaceController@save');
-
 });

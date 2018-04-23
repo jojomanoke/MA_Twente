@@ -9,6 +9,6 @@ class ErrorPriority extends Model
     protected $table = 'errors_priority';
 
     public function errors(){
-        return $this->belongsToMany(Error::class);
+        return $this->hasMany(Error::class, 'id', 'priority_id');
     }
 }
