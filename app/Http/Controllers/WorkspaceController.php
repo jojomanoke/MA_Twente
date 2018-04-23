@@ -20,7 +20,7 @@ class WorkspaceController extends Controller
     public function add(){
         $user = Auth::user();
 
-        return view('wokspace.add', ['user' => $user]);
+        return view('workspace.add', ['user' => $user]);
     }
 
     public function save(Request $r){
