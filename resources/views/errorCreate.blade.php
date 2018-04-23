@@ -42,13 +42,6 @@
                     <label for="inputError">Error beschrijfing</label>
                     <textarea class="form-control" id="inputError" name="inputError" placeholder="Beschrijf hier je error"></textarea>
                 </div>
-                @if($user->role->name == 'admin')
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            test admin
-                        </div>
-                    </div>
-                @endif
                 <button type="submit" class="btn btn-primary">Submit error</button>
             </form>
         </div>
