@@ -29,6 +29,7 @@ Route::get('/edit', 'ErrorController@edit')->name('edit');
 
 
 
-Route::prefix('/workspace')->group(function(){
-    Route::get('/', 'WorkspaceController@overview')->name('workspace');
-});
+Route::get('workspace/overview', 'WorkspaceController@overview');
+Route::get('workspace/add', 'WorkspaceController@add');
+Route::post('workspace/save', 'WorkspaceController@save');
+
