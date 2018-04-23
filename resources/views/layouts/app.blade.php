@@ -58,11 +58,12 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         @if($user->role->name == 'default')
                                         <a class="dropdown-item" href="{{ route('overview') }}">Gebruiker error overview</a>
+                                        <a class="dropdown-item" href="{{ route('create') }}">Create a error</a>
                                         @endif
                                         @if($user->role->name == 'admin')
                                         <a class="dropdown-item" href="{{ route('overview') }}">Admin error overview</a>
                                         @endif
-                                        <a class="dropdown-item" href="{{ route('create') }}">Create a error</a>
+                                       
                                     </div>
                                 </li>
                             <li class="nav-item dropdown">

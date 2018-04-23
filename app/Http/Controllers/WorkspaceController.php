@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\ComputerConfig;
-use App\SoftwareConfig;
 use App\Workspace;
 use Illuminate\Http\Request;
 use Auth;
+use App\SoftwareConfig;
+use App\ComputerConfig;
 
 class WorkspaceController extends Controller
 {
@@ -16,7 +16,6 @@ class WorkspaceController extends Controller
 
         return view('workspace.overview', ['user' => $user, 'workspaces' => $workspaces]);
     }
-
     public function add(){
         $user = Auth::user();
 
