@@ -13,8 +13,8 @@ class RefactorWorkspaceTable extends Migration
      */
     public function up()
     {
-        DB::table('workspace', function(Blueprint $t){
-            $t->integer('active')->default(0);
+        Schema::table('workspace', function(Blueprint $t){
+            $t->integer('active');
         });
     }
 

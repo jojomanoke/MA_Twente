@@ -13,8 +13,8 @@ class RefactorErrorTable extends Migration
      */
     public function up()
     {
-        DB::table('errors', function(Blueprint $t){
-            $t->timestamp('ended_at')->unsigned()->nullable();
+        Schema::table('errors', function(Blueprint $t){
+            $t->timestamp('ended_at')->nullable();
             $t->integer('workspace_id')->unsigned();
             $t->foreign('workspace_id')->references('id')->on('workspace');
         });

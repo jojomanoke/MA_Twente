@@ -9,6 +9,6 @@ class SoftwareConfig extends Model
     protected $table = 'software_config';
 
     public function workspace(){
-        return $this->hasMany(Workspace::class);
+        return $this->hasMany(Workspace::class, 'id', 'workspace_id');
     }
 }
